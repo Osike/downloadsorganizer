@@ -1,0 +1,13 @@
+[Unit]
+Description=Desktop File Organizer - Runs every 14 hours
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/var/www/html/demos/desktopOrgnizer/.venv/bin/python /var/www/html/demos/desktopOrgnizer/python_organize.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
